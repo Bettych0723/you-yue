@@ -1,0 +1,318 @@
+// 清除浮動
+.clearfix {
+    @include clearfix;
+}
+
+// No-scroll
+.no-scroll {
+    overflow: hidden;
+    width: 100vh;
+    height: 100vh;
+}
+
+// 全站設定
+html {
+    width: 100vw;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-behavior: auto;
+    width: 100%;
+    background: image-url('bg.jpg') repeat left top;
+    font-family: 'Montserrat', "微軟正黑體", "Helvetica Neue", Helvetica, sans-serif;
+    // font-family: "微軟正黑體", "Helvetica Neue", Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    background: none;
+    border: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    cursor: pointer;
+    &.is-active {
+        display: block;
+        animation-name: fadeIn;
+        animation-duration: .3s;
+        animation-fill-mode: both;
+    }
+}
+
+
+// Header
+.header-wrap {
+    @include layout-max-width(1920px); //1360px
+    background: image-url('bg4_y.jpg') repeat-y left top;
+    padding: 40px 0 0px;
+    // background: #EEE;
+    @include MQ(d1366){
+        background: none;
+    }
+}
+.header-content{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    left: 0;
+    right: 0;
+    @include layout-max-width(1360px);
+
+    @include MQ(d1366){
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}
+.fixHeader{
+    &::before{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        display: block;
+        content: '';
+        background: rgba(#fff,.95);
+        box-shadow: 0 0 100px 0 rgba(#000, .1);
+        // background: image-url('bg.jpg') repeat left top;
+        // box-shadow: 0 0 100px 0 rgba(#ff9600, 1);
+
+        width: 100%;
+        height: 120px; //120
+        z-index: 90;
+
+    }
+    .header-content{
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+        z-index: 95;
+
+        .nav-btn{
+            margin: 20px 0 0 0 ;
+        }
+        .nav-item a:hover,
+        .nav-item a:active{
+            border: 1px solid transparent;
+        }
+        >div{
+            max-width: 1360px;
+            padding-top: 20px; //20px
+            height: 100px; //120
+            margin: 0 auto;
+            z-index: 99;
+            @include MQ(d1366){
+                padding: 20px 20px 0;
+            }
+        }
+        &:after{
+            width: 100%;
+        }
+    }
+}
+
+
+
+// Logo
+.logo {
+    display: block;
+    float: left;
+    cursor: pointer;
+    background: image-url('logo.png') no-repeat left top;
+    width: image-width('logo.png');
+    height: image-height('logo.png');
+    @include MQ(t768){
+        position: relative;
+        z-index: 29;
+        
+    }
+}
+
+// nav
+.nav-wrap{
+    @include MQ(t768){
+        justify-content: center;
+        align-items: flex-start;
+
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 19;
+        display: none;
+        padding-top: 180px;
+
+        position: fixed;
+        @include background-image(linear-gradient(#fea647, #bbec79));
+
+        &.is-active{
+            display: flex;
+        }
+    }
+}
+.nav-list{
+    float: right;   
+    @include MQ(t768) {
+        float: none;
+        flex: 1;
+        max-width: 240px;
+        text-align: center;
+    }
+
+}
+.nav-item {
+    display: inline-block;
+    a{
+        display: block;
+        line-height: 20px;
+        padding: 20px 30px;
+        color: #333;
+        font-size: 20px;
+        border: 1px solid transparent;
+        &:active,
+        &:hover {
+            border-radius: 30px;
+            box-shadow: 0 0 100px 0 rgba(#ff9600, 1);
+            background: rgba(#fff,.8);
+            border: 1px solid rgba(#fff,.9);
+
+        }
+        @include MQ(d1366){
+            padding: 20px 10px;
+            font-size: 16px;
+        }
+    }
+    @include MQ(t768){
+        display: block;
+        padding: 10px 0;
+        a{
+            font-size: 26px;
+            line-height: 60px;
+            padding: 0;
+        }
+
+    }
+
+}
+
+.nav-btn {
+    display: none;
+    @include MQ(t768) {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        z-index: 99;
+        display: block;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background: rgba(#fff,.8);
+        box-shadow: 0 0 100px 0 rgba(#ff9600, 1);
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        span,
+        span::before,
+        span::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 40px;
+            height: 5px;
+            border-radius: 5px;
+            background: #333333;
+            cursor: pointer;
+            transition: all 300ms ease-in-out;
+        }
+        span::before {
+            top: -10px;
+        }
+        span::after {
+            bottom: -10px;
+        }
+        &.is-active {
+            span {
+                background-color: transparent;
+                &::before,
+                &::after {
+                    top: 0;
+                }
+                &::before {
+                    transform: rotate(45deg);
+                }
+                &::after {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+
+
+// footer
+.footer-wrap {
+    background: image-url('footer_bg2.jpg') repeat left top;
+    width: 100%;
+    position: relative;
+    &::before{
+        position: absolute;
+        bottom: 75px;
+        content: "";
+        mix-blend-mode: overlay;
+        background: rgba(#333333,.4);
+        height: 1px;
+        width: 100%;
+        display: block;
+    }
+    
+}
+.footer-bg{
+    @include layout-max-width(1920px);
+    background: image-url('footer_bg3_y.jpg') repeat-y left top;
+    @include MQ(d1366) {
+        background: none;
+    }
+}
+.footer-center {
+    // padding-top: 247px;
+    padding-top: 160px;
+    background: image-url('footer_bg.png') no-repeat center top;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #333333;
+    margin: 0 auto;
+    p{
+        padding: 20px 0;
+        line-height: 20px;
+    }
+    span{
+        display: block;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
