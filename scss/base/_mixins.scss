@@ -1,0 +1,89 @@
+
+// 清除浮動
+@mixin clearfix() {
+    &:after,
+    &:before {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// scrollbar
+@mixin scrollbar( $bgcolor: #fc8116) { //959595
+    overflow-x: auto;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 10px;
+        height: 12px;
+        background-color: #ffffff; //#ffffff
+    }
+    &::-webkit-scrollbar-track {
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        background: $bgcolor;
+    }
+}
+
+
+// 讓 iOS裝置滑滾更順暢
+@mixin overflow-scroll {
+    overflow-y: auto;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+}
+
+// 溢出文字變"..."
+@mixin text-truncate() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// placeholder
+@mixin placeholder( $color: #999, $color-h: #CCC) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &.placeholder {
+        &::-webkit-input-placeholder {
+            color: $color-h;
+        }
+        &::-moz-placeholder {
+            color: $color-h;
+        }
+        &:-ms-input-placeholder {
+            color: $color-h;
+        }
+        &:-moz-placeholder {
+            color: $color-h;
+        }
+    }
+}
+
+// 版型內容區域的最大預設寬度
+@mixin layout-max-width($width) {
+    max-width: $width; //1000px //1360
+    margin: 0 auto;
+}
+
+
+
