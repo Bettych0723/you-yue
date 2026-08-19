@@ -1,0 +1,306 @@
+// @keyframes contentMove2{
+//     0% {
+//         opacity: .5;
+//     }
+//     100% {
+//         opacity: 1;
+//     }
+// }
+
+@keyframes skill-in{
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes skill-out{
+    0% {
+        opacity: 1;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes contentMove1{
+    0% {
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUpDown2{
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeInUpDown {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn{
+    0% {
+        opacity: 0;
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform:scale(1);
+    }
+}
+@keyframes zoomIn_arrow{
+    0% {
+        opacity: 0;
+        transform: rotate(180deg);
+    }
+    50%{
+        transform: scale(1.2);
+        // transform: rotate(90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        transform: rotate(0);
+    }
+}
+
+
+@keyframes rotateImg{
+    0%{
+        opacity: 0;
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(90deg);
+        transform: scale(1.2)
+    }
+    100%{
+        opacity: 1;
+        transform: rotate(180deg);
+    }
+
+}
+// 藍圈圈
+@keyframes deco_loop1 {
+    0% {
+        left: 10%;
+        // transform: translateX(-50px);
+    }
+    50%{
+        left: 74%;
+    }
+    100% {
+        left: 10%;
+        // transform: translateX(0);
+    }
+}
+// 星星
+@keyframes zoomIn_start{
+    0% {
+        // top: -40px;
+        opacity: 0;
+        transform:scale(1);
+    }
+    50%{
+        // top: 0;
+        transform:scale(1.5);
+    }
+
+    100% {
+        // top: 0;
+        opacity: 1;
+        transform:scale(1);
+    }
+}
+// 箭頭
+@keyframes arrow_deco{
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// 條狀物
+@keyframes stick_animate1{
+    0% {
+        opacity: 0;
+        width: 240px;
+    }
+    50%{
+        width: 140px;
+    }
+    100% {
+        opacity: 1;
+        width: 240px;
+    }
+}
+@keyframes stick_animate2{
+    0% {
+        opacity: 0;
+        width: 100px;
+    }
+    50%{
+        width: 140px;
+    }
+    100% {
+        opacity: 1;
+        width: 100px;
+    }
+}
+
+
+
+
+
+@keyframes footer_obj_move1 {
+    0% {
+        margin-top: 100px;
+    }
+
+    50% {
+        margin-top: 105px ;
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        margin-top: 100px;
+    }
+}
+@keyframes footer_obj_move2 {
+    0% {
+        margin-top: 150px;
+    }
+
+    50% {
+        margin-top: 130px;
+    }
+
+    100% {
+        margin-top: 150px;
+    }
+}
+@keyframes footer_obj_move3 {
+    0% {
+        top: -20px;
+    }
+
+    50% {
+        top: 10px;
+    }
+
+    100% {
+        top: -20px;
+    }
+}
+@keyframes service_obj_move1 {
+    // 圓球
+    0% {
+        transform: translateX(5%) translateY(5%);
+    }
+
+    25% {
+        transform: translateX(10%) translateY(0);
+    }
+    50% {
+        transform: translateX(5%) translateY(-5%);
+    }
+    75%{
+        transform: translateX(0) translateY(0);
+    }
+
+    100% {
+        transform: translateX(5%) translateY(5%);
+    }
+}
+@keyframes service_obj_move2 {
+    // 方塊
+    0% {
+        transform: translateY(0) rotate(25deg);
+    }
+
+    50% {
+        transform: translateY(7%) rotate(30deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(25deg);
+    }
+}
+@keyframes service_obj_move3 {
+    // 彩球
+    0% {
+        filter: hue-rotate(0deg) opacity(1);
+    }
+
+    50% {
+        filter: hue-rotate(-60deg) opacity(.6);
+    }
+
+    100% {
+        filter: hue-rotate(0deg) opacity(1);
+    }
+}
